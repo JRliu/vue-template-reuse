@@ -23,6 +23,8 @@ const App = `
 			<span>age: {{ cat.age }}</span>
 			<span>food: {{ cat.food }}</span>
 		</template>
+
+		<HelloWorld></HelloWorld>
 	</div>
 `;
 
@@ -44,5 +46,9 @@ describe("template", async () => {
     assert.equal(children[4].children[0].text, "food: fish");
     assert.equal(children[5].children[0].text, "age: 5");
     assert.equal(children[6].children[0].text, "food: beef");
+  });
+
+  it("keep tag Case", () => {
+    assert.equal(children[7].tag, "HelloWorld");
   });
 });

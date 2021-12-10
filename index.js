@@ -3,7 +3,10 @@ const babel = require("@babel/core");
 const cheerio = require("cheerio");
 
 function _compileTemplate(source, options, preCompile) {
-  const $ = cheerio.load(source);
+  const $ = cheerio.load(source, {
+    decodeEntities: false,
+    xmlMode: true,
+  });
   const tpls = $("template[v-tpl]");
   const sections = $("template[v-tpl-use]");
 
@@ -38,10 +41,14 @@ function _compileTemplate(source, options, preCompile) {
 
     // 将对应模板内容插入到插槽，并设置插槽的v-tpl-data属性
     $(node).attr("v-tpl-data", curTpl.dataKey);
-    $(node).html(`<div>${curTpl.html}</div>`);
+    $(node).html(`${curTpl.html}`);
   });
 
-  const resultSource = $("body").html();
+  [...tpls].forEach((node) => {
+    $(node).remove();
+  });
+
+  const resultSource = $.html();
 
   const result = preCompile(resultSource, {
     ...options,
