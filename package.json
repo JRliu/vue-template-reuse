@@ -1,6 +1,7 @@
 {
   "name": "vue-template-reuse-compiler",
-  "version": "0.0.3-beta",
+  "version": "0.1.0",
+  "description": "A vue-template-compiler that reuse template in a SFC file.",
   "main": "./index.js",
   "files": [
     "index.js",
@@ -12,7 +13,9 @@
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
-    "cheerio": "^1.0.0-rc.10",
+    "cheerio": "^1.0.0-rc.10"
+  },
+  "peerDependencies": {
     "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
@@ -23,5 +26,13 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/JRliu/vue-template-reuse"
-  }
+  },
+  "keywords": [
+    "vue",
+    "template",
+    "compiler",
+    "HTML",
+    "reuse",
+    "webpack"
+  ]
 }
