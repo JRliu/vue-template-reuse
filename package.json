@@ -1,6 +1,6 @@
 {
   "name": "vue-template-reuse-compiler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A vue-template-compiler that reuse template in a SFC file.",
   "main": "./index.js",
   "files": [
