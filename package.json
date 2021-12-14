@@ -9,11 +9,12 @@
     "README.md"
   ],
   "scripts": {
-    "test": "mocha __test__/**/*.spec.js"
+    "test": "yarn add vue-template-compiler && mocha __test__/**/*.spec.js"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
-    "cheerio": "^1.0.0-rc.10"
+    "cheerio": "^1.0.0-rc.10",
+    "vue-template-compiler": "^2.6.14"
   },
   "peerDependencies": {
     "vue-template-compiler": "^2.6.11"
